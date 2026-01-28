@@ -5,6 +5,7 @@ from aiogram import Bot, Dispatcher, Router
 
 from core.config import BOT_TOKEN, DEVELOPER_ID
 from handlers import include_routers
+from utils.queries import create_tables
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
@@ -13,14 +14,15 @@ router = Router()
 
 
 async def startup(bot: Bot):
+    # create tables
+    await create_tables()
+
     text = "Bot start to work"
-    logging.info(msg=text)
     await bot.send_message(chat_id=DEVELOPER_ID, text=text)
 
 
 async def shutdown(bot: Bot):
     text = "Bot stopped"
-    logging.info(msg=text)
     await bot.send_message(chat_id=DEVELOPER_ID, text=text)
 
 
