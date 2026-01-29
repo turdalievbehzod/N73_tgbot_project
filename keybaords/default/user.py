@@ -24,3 +24,16 @@ user_main_menu = ReplyKeyboardMarkup(
         ]
     ], resize_keyboard=True
 )
+
+courses_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="🐍 Python"),
+            KeyboardButton(text="🌐 Web Development"),
+        ],
+        [
+            KeyboardButton(text="🤖 AI & ML"),
+            KeyboardButton(text="📱 Mobile Development"),
+        ]
+    ], resize_keyboard=True
+)
