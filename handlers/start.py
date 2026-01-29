@@ -19,7 +19,7 @@ async def start_handler(message: types.Message, state: FSMContext):
         await message.answer(text=text, reply_markup=languages)
         await state.set_state(RegisterState.language)
     else:
-        await message.answer(text=f"Salom, {message.from_user.full_name}")
+        await message.answer(text=f"Hello, {message.from_user.full_name}")
 
 
 @router.callback_query(RegisterState.language)
