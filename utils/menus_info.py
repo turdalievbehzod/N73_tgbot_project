@@ -1,16 +1,3 @@
 """
 here are different types of info    
 """
-
-course1= """
-    "🐍 Python": "Python course:\nDuration: 3 months\nLevel: Beginner → Advanced"
-"""
-course2= """
-    "🌐 Web Development": "Web Dev course:\nHTML, CSS, JS, Django"
-"""
-course3= """
-    "🤖 AI & ML": "AI & ML:\nNeural networks, Python, Math"
-"""
-course4= """
-    "📱 Mobile Development": "Mobile Dev:\nFlutter, Android basics"
-"""

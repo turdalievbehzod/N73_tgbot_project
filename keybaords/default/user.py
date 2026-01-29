@@ -34,6 +34,9 @@ courses_menu = ReplyKeyboardMarkup(
         [
             KeyboardButton(text="🤖 AI & ML"),
             KeyboardButton(text="📱 Mobile Development"),
+        ],
+        [
+            KeyboardButton(text="⬅ Back"),
         ]
     ], resize_keyboard=True
 )

@@ -2,12 +2,10 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import ReplyKeyboardRemove
-
-from keybaords.default.user import share_contact, share_location, user_main_menu
+from keybaords.default.user import share_contact, share_location, user_main_menu, courses_menu
 from keybaords.inline.user import languages
-from states.user import RegisterState
+from states.user import CoursesState, RegisterState
 from utils.queries.users import get_user, add_user
-
 router = Router()
 
 
@@ -64,3 +62,33 @@ async def get_location_handler(message: types.Message, state: FSMContext):
         text = "❌ Something went wrong, please try again later"
         await message.answer(text=text, reply_markup=ReplyKeyboardRemove())
     await state.clear()
+    
+@router.message(F.text == "🎓 Courses")
+async def courses_handler(message: types.Message, state: FSMContext):
+    await message.answer(
+        text="📖 Choose a course:",
+        reply_markup=courses_menu
+    )
+    await state.set_state(CoursesState.courses)
+
+
+@router.message(CoursesState.courses)
+async def course_info_handler(message: types.Message, state: FSMContext):
+    courses_info = {
+        "🐍 Python": "Python course:\nDuration: 3 months\nLevel: Beginner → Advanced",
+        "🌐 Web Development": "Web Dev course:\nHTML, CSS, JS, Django",
+        "🤖 AI & ML": "AI & ML:\nNeural networks, Python, Math",
+        "📱 Mobile Development": "Mobile Dev:\nFlutter, Android basics"
+    }
+
+    if message.text == "⬅ Back":
+        await state.clear()
+        await message.answer("Main menu", reply_markup=user_main_menu)
+        return
+
+    info = courses_info.get(message.text)
+    if not info:
+        await message.answer("❌ Please choose a course using buttons")
+        return
+
+    await message.answer(info)
