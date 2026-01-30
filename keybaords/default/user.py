@@ -40,3 +40,24 @@ courses_menu = ReplyKeyboardMarkup(
         ]
     ], resize_keyboard=True
 )
+
+nt_info_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text="NAJOT TA'LIM O'QUV MARKAZI"),
+            KeyboardButton(text="XADRA FILIALI"),
+        ],
+        [
+            KeyboardButton(text="CHILONZOR FILIALI"),
+            KeyboardButton(text="SAMARQAND FILIALI"),
+            
+        ],
+        [
+            KeyboardButton(text="XORAZM FILIALI"),
+            KeyboardButton(text="FARG'ONA FILIALI"),
+        ],
+        [
+            KeyboardButton(text="⬅ Back")
+        ]
+    ], resize_keyboard=True
+)

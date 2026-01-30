@@ -9,4 +9,6 @@ class RegisterState(StatesGroup):
     
 class CoursesState(StatesGroup):
     courses = State()
-    
+
+class SettingsState(StatesGroup):
+    lc_info = State()

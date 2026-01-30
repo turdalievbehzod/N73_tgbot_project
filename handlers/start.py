@@ -2,9 +2,9 @@ from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import ReplyKeyboardRemove
-from keybaords.default.user import share_contact, share_location, user_main_menu, courses_menu
+from keybaords.default.user import share_contact, share_location, user_main_menu, courses_menu, nt_info_menu
 from keybaords.inline.user import languages
-from states.user import CoursesState, RegisterState
+from states.user import CoursesState, RegisterState, SettingsState
 from utils.queries.users import get_user, add_user
 router = Router()
 
@@ -92,3 +92,32 @@ async def course_info_handler(message: types.Message, state: FSMContext):
         return
 
     await message.answer(info)
+
+@router.message(F.text == "⚙️ Settings")
+async def courses_handler(message: types.Message, state: FSMContext):
+    await message.answer(
+        text="📖 Choose your learning center:",
+        reply_markup=nt_info_menu
+    )
+    await state.set_state(SettingsState.lc_info)
+    
+@router.message(SettingsState.lc_info)
+async def lc_info_handler(message: types.Message, state: FSMContext):
+    nt_info = {
+        "NAJOT TA'LIM O'QUV MARKAZI":   "100095, Toshkent, Olmazor tumani, Kichik Halqa Yo'li ko'chasi, 72A",
+        "XADRA FILIALI":                "100011, Toshkent, Shayxontohur tumani, Xadra dahasi, Sebzor ko'chasi, 1",
+        "CHILONZOR FILIALI":	        "100097, Toshkent, Chilonzor tumani, Qatortol ko'chasi, 1B",
+        "SAMARQAND FILIALI":	        "Samarqand viloyati, Samarqand, Rudaki ko'chasi, 225",
+        "XORAZM FILIALI":	            "Xorazm viloyati, Urganch, Al-Xorazmiy ko'chasi, 68B",
+        "FARG'ONA FILIALI":	            "150117, Farg'ona viloyati, Farg'ona, Kuvasoy ko'chasi"
+    }
+    if message.text == "⬅ Back":
+        await state.clear()
+        await message.answer("Main menu", reply_markup=user_main_menu)
+        return
+    info = nt_info.get(message.text)
+    if not info:
+        await message.answer("❌ Please choose your option using buttons")
+        return
+    
+    await message.answer(info)        
