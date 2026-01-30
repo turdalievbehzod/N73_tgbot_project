@@ -4,7 +4,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import ReplyKeyboardRemove
 from keybaords.default.user import share_contact, share_location, user_main_menu, courses_menu, nt_info_menu
 from keybaords.inline.user import languages
-from states.user import CoursesState, RegisterState, SettingsState
+from states.user import CoursesState, RegisterState, ContactsState
 from utils.queries.users import get_user, add_user
 router = Router()
 
@@ -93,15 +93,15 @@ async def course_info_handler(message: types.Message, state: FSMContext):
 
     await message.answer(info)
 
-@router.message(F.text == "⚙️ Settings")
+@router.message(F.text == "☎️ Contacts")
 async def courses_handler(message: types.Message, state: FSMContext):
     await message.answer(
         text="📖 Choose your learning center:",
         reply_markup=nt_info_menu
     )
-    await state.set_state(SettingsState.lc_info)
+    await state.set_state(ContactsState.lc_info)
     
-@router.message(SettingsState.lc_info)
+@router.message(ContactsState.lc_info)
 async def lc_info_handler(message: types.Message, state: FSMContext):
     nt_info = {
         "NAJOT TA'LIM O'QUV MARKAZI":   "100095, Toshkent, Olmazor tumani, Kichik Halqa Yo'li ko'chasi, 72A",

@@ -10,5 +10,5 @@ class RegisterState(StatesGroup):
 class CoursesState(StatesGroup):
     courses = State()
 
-class SettingsState(StatesGroup):
+class ContactsState(StatesGroup):
     lc_info = State()
