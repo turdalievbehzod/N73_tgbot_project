@@ -1,0 +1,72 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-30 20:02+0500\n"
+"PO-Revision-Date: 2026-01-30 19:36+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: handlers/start.py:18
+msgid "🌏 Please select the language that you want"
+msgstr "🌏 Пожалуйста, выберите язык, который вы хотите использовать"
+
+#: handlers/start.py:22
+msgid "Hello welcome back, "
+msgstr "Здравствуйте, с возвращением, "
+
+#: handlers/start.py:30
+msgid "Please enter your full name"
+msgstr "Пожалуйста, введите ваше полное имя"
+
+#: handlers/start.py:39
+msgid "👇 Please enter your phone number by button on the below"
+msgstr "👇 Пожалуйста, введите ваш номер телефона с помощью кнопки ниже"
+
+#: handlers/start.py:48
+msgid "👇 Please enter your location by button on the below"
+msgstr "👇 Пожалуйста, укажите ваше местоположение с помощью кнопки ниже"
+
+#: handlers/start.py:62
+msgid "✅ Successfully registered"
+msgstr "✅ Вы успешно зарегистрированы"
+
+#: handlers/start.py:65
+msgid "❌ Something went wrong, please try again later"
+msgstr "❌ Что-то пошло не так, пожалуйста, попробуйте позже"
+
+#: keybaords/default/user.py:7
+msgid "☎️ Share phone number"
+msgstr "☎️ Поделиться номером телефона"
+
+#: keybaords/default/user.py:15
+msgid "📍 Share my location"
+msgstr "📍 Поделиться местоположением"
+
+#: keybaords/default/user.py:24
+msgid "🎓 Courses"
+msgstr "🎓 Курсы"
+
+#: keybaords/default/user.py:25
+msgid "🎉 Events"
+msgstr "🎉 Мероприятия"
+
+#: keybaords/default/user.py:28
+msgid "☎️ Contacts"
+msgstr "☎️ Контакты"
+
+#: keybaords/default/user.py:29
+msgid "⚙️ Settings"
+msgstr "⚙️ Настройки"
