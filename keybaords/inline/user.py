@@ -7,3 +7,9 @@ languages = InlineKeyboardMarkup(
         InlineKeyboardButton(text="🇷🇺 Русский", callback_data="ru"),
     ]]
 )
+
+channel_keyboard = InlineKeyboardMarkup(
+    inline_keyboard=[[
+        InlineKeyboardButton(text="Test", url="https://t.me/sanjarbekaitest")
+    ]]
+)

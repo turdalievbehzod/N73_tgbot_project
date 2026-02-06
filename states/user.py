@@ -6,9 +6,3 @@ class RegisterState(StatesGroup):
     full_name = State()
     phone_number = State()
     location = State()
-    
-class CoursesState(StatesGroup):
-    courses = State()
-
-class ContactsState(StatesGroup):
-    lc_info = State()

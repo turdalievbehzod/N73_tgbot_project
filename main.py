@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher, Router
 
 from core.config import BOT_TOKEN, DEVELOPER_ID
 from handlers import include_routers
-from middlewares.language import setup_middleware
+from middlewares import setup_middlewares
 from utils.queries import create_tables
 
 bot = Bot(token=BOT_TOKEN)
@@ -31,9 +31,10 @@ async def main():
     main_router = include_routers()
     dp.include_router(main_router)
 
+    setup_middlewares(dp)
+
     dp.startup.register(startup)
     dp.shutdown.register(shutdown)
-    setup_middleware(dp)
 
     await dp.start_polling(bot, polling_timeout=0)
 

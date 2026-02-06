@@ -5,10 +5,6 @@ from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject, User
 from babel.support import Translations
 
-# Your config
-I18N_DOMAIN = "messages"
-LOCALES_DIR = Path("locales")
-
 
 class I18nMiddleware(BaseMiddleware):
     def __init__(self, locales_dir: Path, domain: str = "messages"):
@@ -79,14 +75,3 @@ class I18nMiddleware(BaseMiddleware):
             data["i18n_middleware"] = self  # Give access to middleware
 
         return await handler(event, data)
-
-
-def setup_middleware(dp):
-    """Setup i18n middleware"""
-    i18n = I18nMiddleware(LOCALES_DIR, I18N_DOMAIN)
-
-    # Register for both messages and callback queries
-    dp.message.middleware(i18n)
-    dp.callback_query.middleware(i18n)
-
-    return i18n

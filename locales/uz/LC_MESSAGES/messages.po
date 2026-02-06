@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-30 20:02+0500\n"
+"POT-Creation-Date: 2026-02-04 19:38+0500\n"
 "PO-Revision-Date: 2026-01-30 19:36+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -19,32 +19,52 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: handlers/start.py:18
+msgid "Hello admin "
+msgstr ""
+
+#: handlers/start.py:27
 msgid "🌏 Please select the language that you want"
 msgstr "🌏 Iltimos o'zingizga qulay tilni tanlang"
 
-#: handlers/start.py:22
+#: handlers/start.py:31
 msgid "Hello welcome back, "
 msgstr "Salom xush kelibsiz, "
 
-#: handlers/start.py:30
+#: handlers/start.py:42
 msgid "Please enter your full name"
 msgstr "Iltimos, to‘liq ismingizni kiriting"
 
-#: handlers/start.py:39
+#: handlers/start.py:51
 msgid "👇 Please enter your phone number by button on the below"
 msgstr "👇 Quyidagi tugma orqali telefon raqamingizni kiriting"
 
-#: handlers/start.py:48
+#: handlers/start.py:60
 msgid "👇 Please enter your location by button on the below"
 msgstr "👇 Quyidagi tugma orqali joylashuvingizni kiriting"
 
-#: handlers/start.py:62
+#: handlers/start.py:74
 msgid "✅ Successfully registered"
 msgstr "✅ Muvaffaqiyatli ro‘yxatdan o‘tdingiz"
 
-#: handlers/start.py:65
+#: handlers/start.py:77
 msgid "❌ Something went wrong, please try again later"
 msgstr "❌ Nimadir xato ketdi, iltimos keyinroq qayta urinib ko‘ring"
+
+#: keybaords/default/admin.py:8 keybaords/default/user.py:24
+msgid "🎓 Courses"
+msgstr "🎓 Kurslar"
+
+#: keybaords/default/admin.py:9 keybaords/default/user.py:25
+msgid "🎉 Events"
+msgstr "🎉 Tadbirlar"
+
+#: keybaords/default/admin.py:12
+msgid "⬆️ Send message"
+msgstr ""
+
+#: keybaords/default/admin.py:13 keybaords/default/user.py:29
+msgid "⚙️ Settings"
+msgstr "⚙️ Sozlamalar"
 
 #: keybaords/default/user.py:7
 msgid "☎️ Share phone number"
@@ -54,18 +74,11 @@ msgstr "☎️ Telefon raqamni ulashish"
 msgid "📍 Share my location"
 msgstr "📍 Lokatsiyani ulashish"
 
-#: keybaords/default/user.py:24
-msgid "🎓 Courses"
-msgstr "🎓 Kurslar"
-
-#: keybaords/default/user.py:25
-msgid "🎉 Events"
-msgstr "🎉 Tadbirlar"
-
 #: keybaords/default/user.py:28
 msgid "☎️ Contacts"
 msgstr "☎️ Kontaktlar"
 
-#: keybaords/default/user.py:29
-msgid "⚙️ Settings"
-msgstr "⚙️ Sozlamalar"
+#: middlewares/subscription.py:28
+msgid "Please join this channel"
+msgstr "Iltimos kanalga a'zo bo'ling"
+
